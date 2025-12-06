@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nutrition & Weight Management Advisor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background:#e9e9e9;
+    }
+
+    .sheet {
+      max-width: 900px;
+      margin: 20px auto;
+      background:#ffffff;
+      padding: 25px 30px;
+      border:1px solid #bbbbbb;
+      box-shadow:0 0 8px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align:center;
+      color:#0a7f3f;
+      text-transform:uppercase;
+      margin:0 0 4px;
+      font-size:24px;
+      letter-spacing:0.5px;
+    }
+
+    .subheading {
+      text-align:center;
+      margin:0;
+      font-weight:bold;
+      color:#333;
+      font-size:14px;
+    }
+
+    .subheading.phone {
+      margin-bottom:15px;
+    }
+
+    .export-container{
+      text-align:right;
+      margin:10px 0 15px;
+    }
+
+    .export-btn{
+      background:#0a7f3f;
+      color:#fff;
+      border:none;
+      padding:6px 14px;
+      font-size:13px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    .export-btn:hover{
+      background:#0c9b49;
+    }
+
+    .form-title{
+      text-align:center;
+      text-transform:uppercase;
+      color:#0a7f3f;
+      margin:0 0 10px;
+      font-size:18px;
+      font-weight:bold;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:13px;
+      margin-bottom:10px;
+    }
+
+    th, td{
+      border:1.5px solid #0a7f3f;
+      padding:4px 6px;
+      vertical-align:top;
+    }
+
+    th{
+      font-weight:bold;
+    }
+
+    .section-header{
+      background:#0a7f3f;
+      color:#ffffff;
+      font-weight:bold;
+      text-align:left;
+    }
+
+    .no-border{
+      border:none !important;
+    }
+
+    input[type="text"],
+    input[type="number"]{
+      width:100%;
+      border:none;
+      border-bottom:1px solid #999;
+      font-size:12px;
+      outline:none;
+      padding:1px 2px;
+      box-sizing:border-box;
+    }
+
+    .inline-input{
+      width:70px;
+      display:inline-block;
+    }
+
+    select{
+      width:100%;
+      border:none;
+      font-size:12px;
+      outline:none;
+      background:transparent;
+    }
+
+    .center{
+      text-align:center;
+    }
+
+    @media print{
+      body{
+        background:#ffffff;
+      }
+      .export-container{
+        display:none;
+      }
+      .sheet{
+        box-shadow:none;
+        border:none;
+        margin:0;
+        width:100%;
+        max-width:none;
+        padding:10px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="sheet">
+  <!-- Heading & contact -->
+  <h1>Nutrition &amp; Weight Management Advisor</h1>
+  <p class="subheading">Md Mustafijur Rahaman</p>
+  <p class="subheading phone">+91 7003034767</p>
+
+  <div class="export-container">
+    <button class="export-btn" onclick="window.print()">Export PDF</button>
+  </div>
+
+  <!-- Form title inside sheet -->
+  <div class="form-title">Health Evaluation Sheet</div>
+
+  <!-- Top info row -->
+  <table>
+    <tr>
+      <td colspan="2">NAME:
+        <input type="text" />
+      </td>
+      <td class="center" style="width:80px;">M/F:
+        <input type="text" class="inline-input" />
+      </td>
+      <td>D.O.B:
+        <input type="text" />
+      </td>
+      <td>DATE:
+        <input type="text" />
+      </td>
+    </tr>
+  </table>
+
+  <!-- Assessment details -->
+  <table>
+    <tr>
+      <th colspan="5" class="section-header">ASSESSMENT DETAILS</th>
+    </tr>
+    <tr>
+      <td colspan="2">
+        IDEAL WEIGHT [ WEIGHT kg X (M‑23 or F‑22) / B.M.I ] =
+        <input type="text" class="inline-input" />
+      </td>
+      <td>
+        HEIGHT (cm):
+        <input type="text" />
+      </td>
+      <td>
+        WEIGHT (kg):
+        <input type="text" />
+      </td>
+      <td>
+        KG OVER / UNDER:
+        <input type="text" />
+      </td>
+    </tr>
+  </table>
+
+  <!-- Main stats table -->
+  <table>
+    <tr>
+      <th class="center" style="width:22%;">ITEM</th>
+      <th class="center" style="width:32%;">NORMAL VALUE</th>
+      <th class="center" style="width:18%;">PRESENT<br>STATISTICS</th>
+      <th class="center" style="width:28%;">STATUS<br>(HIGH / LOW / NORMAL)</th>
+    </tr>
+    <tr>
+      <td>BODY FAT</td>
+      <td>
+        Male 14–17%<br>
+        Female 21–24%
+      </td>
+      <td><input type="text" /></td>
+      <td>
+        <select>
+          <option value=""></option>
+          <option>High</option>
+          <option>Low</option>
+          <option>Normal</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>VISCERAL FAT (VF)</td>
+      <td>2 – 8 Unit</td>
+      <td><input type="text" /></td>
+      <td>
+        <select>
+          <option value=""></option>
+          <option>High</option>
+          <option>Low</option>
+          <option>Normal</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>RESTING METABOLISM (RM)</td>
+      <td>
+        Male ≈ 2000<br>
+        Female ≈ 1800
+      </td>
+      <td><input type="text" /></td>
+      <td>
+        <select>
+          <option value=""></option>
+          <option>High</option>
+          <option>Low</option>
+          <option>Normal</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>BODY MASS INDEX (BMI)</td>
+      <td>Male / Female: 18 – 23</td>
+      <td><input type="text" /></td>
+      <td>
+        <select>
+          <option value=""></option>
+          <option>High</option>
+          <option>Low</option>
+          <option>Normal</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>BODY AGE</td>
+      <td>&nbsp;</td>
+      <td><input type="text" /></td>
+      <td>
+        <select>
+          <option value=""></option>
+          <option>High</option>
+          <option>Low</option>
+          <option>Normal</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>SUB‑CUTANEOUS</td>
+      <td>&lt; 15%</td>
+      <td><input type="text" /></td>
+      <td>
+        <select>
+          <option value=""></option>
+          <option>High</option>
+          <option>Low</option>
+          <option>Normal</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>MUSCLE MASS</td>
+      <td>
+        Male: 33–36%<br>
+        Female: 30–33%
+      </td>
+      <td><input type="text" /></td>
+      <td>
+        <select>
+          <option value=""></option>
+          <option>High</option>
+          <option>Low</option>
+          <option>Normal</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+
+  <!-- BMI & risk table -->
+  <table>
+    <tr>
+      <th rowspan="2" class="center" style="width:9%;">B.M.I</th>
+      <th rowspan="2" class="center" style="width:14%;">CATEGORY</th>
+      <th colspan="3" class="center" style="width:24%;">MEASUREMENTS (cm)</th>
+      <th rowspan="2" class="center" style="width:53%;">YOUR PRESENT BODY MASS INDEX (B.M.I) IS:</th>
+    </tr>
+    <tr>
+      <th class="center" style="width:8%;">CHEST</th>
+      <th class="center" style="width:8%;">WAIST</th>
+      <th class="center" style="width:8%;">HIPS</th>
+    </tr>
+    <tr>
+      <td>Below 16</td>
+      <td>Malnutrition 2</td>
+      <td rowspan="7"><input type="text" /></td>
+      <td rowspan="7"><input type="text" /></td>
+      <td rowspan="7"><input type="text" /></td>
+      <td>Anorexia, bulimia, osteoporosis, break down of muscle mass etc.</td>
+    </tr>
+    <tr>
+      <td>16.1 – 18.0</td>
+      <td>Malnutrition 1</td>
+      <td>Digestive problems, weakness, chronic fatigue, stress, anxiety, reproductive / hormonal dysfunction.</td>
+    </tr>
+    <tr>
+      <td>18.1 – 23.0</td>
+      <td>Normal</td>
+      <td>Normal menstruation, can handle stress, good energy levels, vitality, resistance to illness, good physical condition.</td>
+    </tr>
+    <tr>
+      <td>23.1 – 25.0</td>
+      <td>Overweight</td>
+      <td>Fatigue, digestive problems, circulation problems.</td>
+    </tr>
+    <tr>
+      <td>25.1 – 28.0</td>
+      <td>Obesity Grade 1</td>
+      <td>Diabetes, hypertension, coronary diseases, joint pains / arthritis.</td>
+    </tr>
+    <tr>
+      <td>28.1 – 33.0</td>
+      <td>Obesity Grade 2</td>
+      <td>Diabetes, hypertension, coronary diseases, joint pains / arthritis.</td>
+    </tr>
+    <tr>
+      <td>Over 33</td>
+      <td>Obesity Grade 3</td>
+      <td>Maximum risk of diabetes, heart attack, stroke, some cancers, even premature death, erectile dysfunction.</td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
